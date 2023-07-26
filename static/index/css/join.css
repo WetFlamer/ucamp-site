@@ -1,0 +1,133 @@
+.join{margin:0 auto;padding:0;width:100%;font-family:'Montserrat-light';background:#000;height:100%;overflow:auto}
+.mjoin{display:none}
+.join .abanner{margin:0 auto;padding:0;width:100%;position:relative}
+.join .abanner img{width:100%;vertical-align:middle;border:0}
+.join .abanner .title{text-align:center;margin:0 auto;padding:0;color:#fff;position:absolute;top:8em;left:0px;width:100%;font-family:'Montserrat-light'}
+.join .abanner .title b{display:block;margin:0 auto;padding:0;font-size:2.4em;line-height:1.25em;font-weight:200;font-family:'Montserrat'}
+.join .abanner .title span{display:block;margin:0 auto;padding:0;font-size:1.2em;line-height:1.25em}
+.join .acon{margin:0 auto;padding:0;width:100%;background:#000;height:100%;overflow:auto}
+.join .acon ul{margin:0 auto;padding:0;width:100%}
+.join .acon ul li{width:100%;float:left;margin:0 auto;padding:0;height:100%;overflow:auto}
+.join .acon ul li .tp img{width:100%;vertical-align:middle;border:0}
+.join .acon ul li .txt h1{display:block;font-size:2.1em;padding:0;color:#fff;font-weight:600;width:100%}
+.join .acon ul li .txt h3{display:block;color:#fff;font-size:1.2em;padding:0;line-height:1.5em;width:100%;font-weight:400}
+.join .acon ul li:nth-child(1) .tp{width:72.86%;margin:0 auto;padding:0;margin-top:3em}
+.join .acon ul li:nth-child(1) .txt{width:72.86%;margin:0 auto;padding:0;margin-top:3em}
+.join .acon ul li:nth-child(1) .txt h1{text-align:left}
+.join .acon ul li:nth-child(1) .txt h3{text-align:left}
+.join .acon ul li:nth-child(2) .txt{width:100%;margin:0 auto;padding:0;position:absolute;left:0;top:6em}
+.join .acon ul li:nth-child(2) .txt h1{text-align:center;width:72.86%;margin:0 auto}
+.join .acon ul li:nth-child(2) .txt h3{text-align:center;width:72.86%;margin:0 auto;margin-top:0.5em;line-height:2em}
+.join .acon ul li:nth-child(2) .tp{width:100%;margin:0 auto;padding:6em 0 0 0}
+.join .acon ul li:nth-child(3) .txt{width:72.86%;margin:0 auto;padding:4.6em 0 0 0}
+.join .acon ul li:nth-child(3) .txt h3{margin-top:0.6em;line-height:2em}
+.join .acon ul li:nth-child(3) .tp{width:72.86%;margin:0 auto;margin-top:3.7em}
+.join .acon ul li:nth-child(4) .txt{width:72.86%;margin:0 auto;padding:4em 0 0 0}
+.join .acon ul li:nth-child(4) .txt h3{line-height:2em;margin-top:0.25em}
+.join .acon ul li:nth-child(4) .tp{width:100%;margin:0 auto;margin-top:2.75em}
+.join .acon ul li:nth-child(5) .txt{width:72.86%;margin:0 auto;padding:5.8em 0 7.8em 0}
+.join .acon ul li:nth-child(5) .txt h3{margin:0 auto;padding:0;margin-top:1.8em}
+@media only screen and (max-width:1366px){
+	.join .abanner .title b{font-size:2.2em;line-height:1.25em}
+	.join .abanner .title span{font-size:1.1em;line-height:1.25em}
+	.join .acon ul li .txt h1{font-size:1.8em}
+	.join .acon ul li .txt h3{font-size:1em;line-height:1.2em}
+}
+@media only screen and (max-width:1280px){
+	.join .acon ul li:nth-child(1) .tp{margin-top:2.5em}
+	.join .acon ul li:nth-child(1) .txt{margin-top:2.5em}
+	.join .acon ul li:nth-child(2) .txt{top:5em}
+	.join .acon ul li:nth-child(2) .txt h3{margin-top:0.3em;line-height:2em}
+	.join .acon ul li:nth-child(2) .tp{padding:5em 0 0 0}
+	.join .acon ul li:nth-child(3) .txt{padding:4.2em 0 0 0}
+	.join .acon ul li:nth-child(3) .txt h3{margin-top:0.4em;line-height:2em}
+	.join .acon ul li:nth-child(3) .tp{margin-top:3.2em}
+	.join .acon ul li:nth-child(4) .txt{padding:4em 0 0 0}
+	.join .acon ul li:nth-child(4) .txt h3{line-height:2em;margin-top:0.15em}
+	.join .acon ul li:nth-child(4) .tp{margin-top:2.25em}
+	.join .acon ul li:nth-child(5) .txt{padding:5em 0 7em 0}
+	.join .acon ul li:nth-child(5) .txt h3{margin-top:1.5em}
+}
+@media only screen and (max-width:1024px){
+	.join .abanner .title b{font-size:1.8em;line-height:1.25em}
+	.join .abanner .title span{font-size:0.8em;line-height:1.25em}
+	.join .acon ul li .txt h1{font-size:1.5em}
+	.join .acon ul li .txt h3{font-size:0.8em;line-height:1.5em}
+}
+@media only screen and (max-width:750px){
+	.join{display:none}
+	.mjoin{display:block;margin:0 auto;padding:0;width:100%;font-family:'Montserrat-light';background:#000;height:100%;overflow:auto}
+	.mjoin .abanner{margin:0 auto;padding:0;width:100%;position:relative}
+	.mjoin .abanner img{width:100%;vertical-align:middle;border:0}
+	.mjoin .abanner .title{position:absolute;left:0;top:20.8%;width:100%;text-align:center;margin:0 auto;padding:0;color:#fff;width:100%;font-family:'Montserrat-light'}
+	.mjoin .abanner .title b{display:block;margin:0 auto;padding:0;font-size:2.83em;line-height:1.25em;font-weight:200;font-family:'Montserrat'}
+	.mjoin .abanner .title span{display:block;margin:0 auto;padding:0;font-size:1.16em;line-height:1.25em}
+	.mjoin .acon{margin:0 auto;padding:0;width:100%;background:#000;padding:0;height:100%;overflow:auto;position: relative;}
+	.mjoin .acon ul{margin:0 auto;padding:0;width:100%}
+	.mjoin .acon ul li{width:100%;float:left;margin:0 auto;padding:0;height:100%;overflow:auto;position:relative}
+	.mjoin .acon ul li .tp{width:100%}
+	.mjoin .acon ul li .tp img{width:100%;vertical-align:middle;border:0}
+	.mjoin .acon ul li .txt{width:100%;margin:0 auto}
+	.mjoin .acon ul li .txt h1{display:block;font-size:2.25em;color:#fff;font-weight:600;width:100%;padding:0 0 12px;}
+	.mjoin .acon ul li .txt h3{display:block;color:#fff;font-size:1.375em;padding:0;line-height:1.8em;width:100%;font-weight:400}
+	.mjoin .acon ul li:nth-child(1) .txt{position:absolute;top:13.125em;left:0;width:100%}
+	.mjoin .acon ul li:nth-child(1) .txt h1{width:77.3%;margin:0 auto}
+	.mjoin .acon ul li:nth-child(1) .txt h3{margin:0 auto;margin-top:1em;width:77.3%}
+	.mjoin .acon ul li:nth-child(2) .txt{position:absolute;top:13em;left:0;width:100%}
+	.mjoin .acon ul li:nth-child(2) .txt h1{width:82.3%;margin:0 auto}
+	.mjoin .acon ul li:nth-child(2) .txt h3{margin:0 auto;margin-top:1em;width:82.3%}
+	.mjoin .acon ul li:nth-child(3) .txt{position:absolute;left:0;bottom: 109vw;width:100%}
+	.mjoin .acon ul li:nth-child(3) .txt h1{width:84%;margin:0 auto}
+	.mjoin .acon ul li:nth-child(3) .txt h3{margin:0 auto;margin-top:1em;width:84%}
+	.mjoin .acon ul li:nth-child(4) .txt{position:absolute;left:0;width:100%;bottom: 120vw;}
+	.mjoin .acon ul li:nth-child(4) .txt h1{width:83%;margin:0 auto}
+	.mjoin .acon ul li:nth-child(4) .txt h3{margin:0 auto;margin-top:1em;width:83%}
+	.mjoin .acon ul li:nth-child(4) .txt2{position:absolute;bottom:3.75em;left:0;width:100%}
+	.mjoin .acon ul li:nth-child(4) .txt2 h1{display:block;font-size:2.25em;padding:0;color:#fff;font-weight:600;width:100%}
+	.mjoin .acon ul li:nth-child(4) .txt2 h3{display:block;color:#fff;font-size:1.375em;padding:0;line-height:1.8em;width:100%;font-weight:400}
+	.mjoin .acon ul li:nth-child(5){position: absolute;left: 0;bottom: 15vw;height:auto;transform:translate(0,50%);}
+}
+@media only screen and (max-width:550px){
+	.mjoin .acon ul li .txt h1{font-size:2.2em}
+	.mjoin .acon ul li .txt h3{font-size:1.2em;line-height:1.8em}
+	.mjoin .acon ul li:nth-child(4) .txt2 h1{font-size:2.2em}
+	.mjoin .acon ul li:nth-child(4) .txt2 h3{font-size:1.2em;line-height:1.8em}
+}
+@media only screen and (max-width:425px){
+	.mjoin .acon ul li .txt h1{font-size:20px;line-height:30px}
+	.mjoin .acon ul li .txt h3{font-size:12px;line-height:22px}
+	.mjoin .acon ul li:nth-child(4) .txt2 h1{font-size:20px;line-height:30px}
+	.mjoin .acon ul li:nth-child(4) .txt2 h3{font-size:12px;line-height:22px}
+	.mjoin .acon ul li:nth-child(1) .txt{top:115px}
+	.mjoin .acon ul li:nth-child(1) .txt h3{margin-top:5px}
+	.mjoin .acon ul li:nth-child(2) .txt{top:110px}
+	.mjoin .acon ul li:nth-child(2) .txt h3{margin-top:5px}
+	.mjoin .acon ul li:nth-child(3) .txt h3{margin-top:5px}
+	.mjoin .acon ul li:nth-child(4) .txt h3{margin-top:5px}
+	.mjoin .acon ul li:nth-child(4) .txt2{bottom:30px}
+}
+@media only screen and (max-width:360px){
+	.mjoin .acon ul li .txt h1{font-size:18px;line-height:28px}
+	.mjoin .acon ul li .txt h3{line-height:18px}
+	.mjoin .acon ul li:nth-child(4) .txt2 h1{font-size:18px;line-height:28px}
+	.mjoin .acon ul li:nth-child(4) .txt2 h3{line-height:18px}
+	.mjoin .acon ul li:nth-child(1) .txt{top:100px}
+	.mjoin .acon ul li:nth-child(1) .txt h3{margin-top:0px}
+	.mjoin .acon ul li:nth-child(2) .txt{top:100px}
+	.mjoin .acon ul li:nth-child(2) .txt h3{margin-top:0px}
+	.mjoin .acon ul li:nth-child(3) .txt h3{margin-top:0px}
+	.mjoin .acon ul li:nth-child(4) .txt{top:90px}
+	.mjoin .acon ul li:nth-child(4) .txt h3{margin-top:0px}
+	.mjoin .acon ul li:nth-child(4) .txt2{bottom:22px}
+}
+@media only screen and (max-width:320px){
+	.mjoin .acon ul li:nth-child(1) .txt{top:75px}
+	.mjoin .acon ul li:nth-child(2) .txt{top:80px}
+	.mjoin .acon ul li:nth-child(4) .txt{top:65px}
+	.mjoin .acon ul li:nth-child(4) .txt2{bottom:18px}
+}
+.join .acon ul li{overflow:hidden}
+.join .abanner{background:#171717}
+.join .abanner video{object-fit:cover;width:100%;height:100%}
+.mjoin .abanner{background:#171717}
+.mjoin .abanner video{object-fit:cover;width:100%;height:100%}

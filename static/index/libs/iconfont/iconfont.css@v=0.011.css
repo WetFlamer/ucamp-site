@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "ap-font"; /* Project id 1919320 */
+  src: url('iconfont.woff2@t=1660284138344') format('woff2'),
+       url('iconfont.woff@t=1660284138344') format('woff'),
+       url('iconfont.ttf@t=1660284138344') format('truetype');
+}
+
+.ap-font {
+  font-family: "ap-font" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ap-contact:before {
+  content: "\e600";
+}
+
+.ap-kefu:before {
+  content: "\e625";
+}
+
+.ap-zhiding:before {
+  content: "\e7b9";
+}
+
+.ap-shuzi0:before {
+  content: "\30";
+}
+

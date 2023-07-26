@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>Home | Ucamp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="keywords" content="Home">
+    <meta name="description" content="Home">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Home | Ucamp">
+    <meta name="twitter:description" content="Home">
+    <meta name="twitter:image" content="./images/favicon.png">
+    <meta property="og:title" content="Home | Ucamp">
+    <meta property="og:description" content="Home">
+    <meta property="og:image" content="./images/favicon.png">
+    <link href="static/index/css/public.css@v=0.011.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="static/index/js/jquery-3.6.0.min.js@v=0.011"></script>
+    <script type="text/javascript" src="static/index/js/public.js@v=0.011"></script>
+    <link href="./images/favicon.png" rel="icon" />
+    <link rel="stylesheet" href="static/index/css/swiper.min.css@v=0.011.css">
+    <link rel="stylesheet" href="static/index/libs/bootstrap/css/bootstrap.css@v=0.011.css">
+    <link rel="stylesheet" href="static/index/css/animate.min.css@v=0.011.css">
+    <link rel="stylesheet" href="static/index/css/common.css@v=0.011.css">
+    <link rel="stylesheet" href="static/index/libs/iconfont/iconfont.css@v=0.011.css">
+    <link rel="stylesheet" href="static/index/css/font.css@v=0.011.css">
+    <style type="text/css">
+        .swiper-slide-full {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover
+        }
+
+        .video-full-box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .video-full-box .video-box {
+            width: 100%;
+            height: 75%;
+            position: relative;
+        }
+
+        .video-full-box .video-box .video-div {
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width:767.98px) {
+            .video-full-box .video-box .video-div {
+                object-fit: cover;
+            }
+        }
+
+        .video-full-box .video-box .video-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .m-youtube .tv .screen {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            margin: auto;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .m-youtube .tv .screen.active {
+            opacity: 1;
+        }
+
+        .m-youtube .tv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .m-youtube-overlay {
+            height: 100%;
+            width: 100%;
+            opacity: 0.2;
+            position: absolute;
+            z-index: 2;
+            background-color: #000;
+        }
+
+        .m-youtube-wrapper {
+            width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .margin-bottom-10 {
+            margin-bottom: 10px;
+        }
+
+        .margin-bottom-15 {
+            margin-bottom: 15px;
+        }
+
+        .margin-bottom-30 {
+            margin-bottom: 30px;
+        }
+    </style>
+    <style type="text/css">
+        @-webkit-keyframes jump-animation {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            to {
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
+
+            40% {
+                -webkit-transform: translateY(5px);
+                transform: translateY(5px)
+            }
+
+            60% {
+                -webkit-transform: translateY(3px);
+                transform: translateY(3px)
+            }
+        }
+
+        @keyframes jump-animation {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            to {
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
+
+            40% {
+                -webkit-transform: translateY(5px);
+                transform: translateY(5px)
+            }
+
+            60% {
+                -webkit-transform: translateY(3px);
+                transform: translateY(3px)
+            }
+        }
+
+        .jump-am {
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-name: jump-animation;
+            animation-name: jump-animation;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .index-section-item {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .index-section {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .index-title-section {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .is-item.active {
+            z-index: 999;
+        }
+
+        .is-item {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 300ms;
+        }
+
+        .is-item .is-item-box {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .is-item .is-item-box .is-tit {
+            position: relative;
+            display: block;
+            text-align: center;
+            margin-top: 140px;
+            font-size: 40px;
+        }
+
+        .is-item .is-item-box .is-description {
+            position: relative;
+            text-align: center;
+            display: block;
+            font-size: 14px;
+        }
+
+        .is-item .is-item-box .is-buttons-group-box {
+            position: absolute;
+            width: 100%;
+            bottom: 12%;
+        }
+
+        .is-item .is-item-box .is-buttons-group-box .is-buttons-group {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .showup50 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+
+        .showup50delay {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease 0.5s;
+        }
+
+        .active .showup50 {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .active .showup50delay {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .is-arrow-down {
+            position: absolute;
+            width: 100%;
+            height: 24px;
+            margin: 0 auto;
+            bottom: 5%;
+            display: block;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .link-btn {
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            width: 328px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 25px;
+            font-weight: normal;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0 1rem;
+        }
+
+        .link-btn:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .link-btn-white {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .link-btn-white:hover {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .link-btn-black {}
+
+        @media (max-width:992px) {
+            .is-item .is-item-box .is-tit {
+                font-size: 32px;
+            }
+
+            .link-btn {
+                font-size: 12px;
+                display: block;
+                margin: 10px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+
+            .is-item .is-item-box .is-buttons-group-box {
+                bottom: 10%;
+            }
+
+            .is-arrow-down {
+                bottom: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        .nav>ul>li>a:active {
+            color: #212d37;
+            text-decoration: none;
+        }
+    </style>
+    <div class="headerW">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html" target="_blank"><img
+                        src="./images/0745a0bb76d843bba6cd7053a9a1737b.png?v=0.011"
+                        alt="Ucamp" /></a>
+            </div>
+            <div class="navW font16">
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <a href="prefab-A5.html" class="active">A5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-A7.html" class="">A7</a>
+                        </li>
+                        <li>
+                            <a href="prefab-C3.html" class="">C3</a>
+                        </li>
+                        <li>
+                            <a href="prefab-C5.html" class="">C5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-H5.html" class="">H5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-P5.html" class="">P5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-P7.html" class="">P7</a>
+                        </li>
+                        <li>
+                            <a href="prefab-X5.html" class="">X5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-X7.html" class="">X7</a>
+                        </li>
+                        <li>
+                            <a href="prefab-Z5.html" class="">Z5</a>
+                        </li>
+                        <li>
+                            <a href="prefab-Z7.html" class="">Z7</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBtn font18">
+                Menu </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <div class="navM font16">
+        <div class="close"></div>
+        <ul>
+            <li class="hidden_pc active">
+                <a href="prefab-A5.html">A5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-A7.html">A7</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-C3.html">C3</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-C5.html">C5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-H5.html">H5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-P5.html">P5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-P7.html">P7</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-X5.html">X5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-X7.html">X7</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-Z5.html">Z5</a>
+            </li>
+            <li class="hidden_pc">
+                <a href="prefab-Z7.html">Z7</a>
+            </li>
+            <li class="">
+                <a href="prefab-E5.html">E5</a>
+            </li>
+            <li class="">
+                <a href="prefab-E7.html">E7</a>
+            </li>
+            <li class="">
+                <a href="prefab-O5.html">O5</a>
+            </li>
+            <li class="">
+                <a href="prefab-V5.html">V5</a>
+            </li>
+            <li class="">
+                <a href="prefab-V7.html">V7</a>
+            </li>
+            <li class="">
+                <a href="prefab-营地详情.html">About Ucamp</a>
+            </li>
+            <li class="">
+                <a href="contact.html">Contact Us</a>
+            </li>
+            <li class="">
+                <a href="abouts-joinus.html">Join Us</a>
+            </li>
+            <li class="">
+                <a href="news.html">News</a>
+            </li>
+            <li class="">
+                <a href="#">中文</a>
+            </li>
+        </ul>
+    </div>
+    <div class="swiper-container" id="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/328e1dec6f97df258ab824105c073692.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/83ddddad23e67898d5f42c52f7dc286f.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/0cbe697b4cfe1e7cb015e8d7ec8b425c.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/9c04f2b789ee2705237ea513dda2402a.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/8653b7185ddd75fa66435b5e0194536a.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/9a177478bee7c3ccc7a7c70fd4790c34.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/f5fda8b0c9b2d1fc054e469bd3c72c10.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/5ed8deb138f7ed297b1a61fa32dd458c.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/5a38c27d596b86fb0f3593575cee6ed5.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/0f635ebf0bc9444baa27e9d4da4f3128.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/db32925391dc9371a7020074a6a4c2b5.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/a67b5ae282d14a64991efa04b5538680.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/3399c9b5a2c573468056377b84feb315.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/510f454f8836daf84c32c90beabec6b4.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="wap"
+                data-background="./images/9d421223d20f8c75c085c0b78ed528f0.jpg">
+            </div>
+            <div class="swiper-slide " data-type="wap">
+                <div class="flex-column" style="width:100%;height: 100%;display: flex;">
+                    <div class="flex-fill"
+                        style="width:100%; height: 80%; background: url('./images/84b14cb93e1b56f2742fbbd510cf20bb.jpg') no-repeat center ; background-size: cover">
+                    </div>
+                    <div class="footer font14">
+                        <div class="fNav">
+                            <ul>
+                                <li><a href="prefab-营地详情.html">About Ucamp</a></li>
+                                <li><a href="privacy-list.html">Privacy and Legal</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="#"
+                                        target="_blank">粤ICP备20040314号-1</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/e9a353bc4b965d0fdb39e630783c41e9.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/3a31fbd091a22bfb3b30f7aa840d7c2b.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/64b1ab77e2e4c011bfe582160dd3a9af.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/daf49d9628fd176b23d8fdfcd06dfc9f.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/cc8ad8664698f6ae1de208f64488571a.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/9ef9505f584769a3cdcf8378a5bc60b3.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/2f7b692557727a61dea80c01f02416bf.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/c337ff5d498eb4534fdbcd9128658c47.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/7b877f49b6ef5ba3c5ff2524a10ccc55.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/e80f22783fafaf7ae73689c370ffdb1f.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/f5d56b44ab1b747cb2056b508ffb8811.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/8de6af4be8d64bc17752279db3ae4889.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/41bf92300750a9fbce26025a79f52df4.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/47b3ca87f5123bf2e8b79ef47f530131.jpg">
+            </div>
+            <div class="swiper-slide swiper-lazy swiper-slide-full" data-type="pc"
+                data-background="./images/0b126f130de47b89ebf057fcd888d7ac.jpg">
+            </div>
+            <div class="swiper-slide " data-type="pc">
+                <div class="flex-column" style="width:100%;height: 100%;display: flex;">
+                    <div class="flex-fill"
+                        style="width:100%; height: 80%; background: url('#') no-repeat center ; background-size: cover">
+                    </div>
+                    <div class="footer font14">
+                        <div class="fNav">
+                            <ul>
+                                <li><a href="prefab-营地详情.html">About Ucamp</a></li>
+                                <li><a href="privacy-list.html">Privacy and Legal</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="#"
+                                        target="_blank">粤ICP备20040314号-1</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="index-section _index-section" style="">
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp P5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">Home
+                        Everywhere</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-P5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp P7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-P7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp Z5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-Z5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-black">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp Z7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Reinnovate Your Nature Life</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-Z7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp X5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">100%
+                        Original Design</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-X5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp X7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">One
+                        Stop Camp Solution</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-X7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp C3</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Designed for Tourism Development</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-C3.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp C5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">Back
+                        to Nature</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-C5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp A5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-A5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp A7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                    </div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-A7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #ffffff;">Ucamp H5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #ffffff;">
+                        Designed for Tourism Development</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-H5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp E5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">100%
+                        Original Design</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-E5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp E7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Reinnovate Your Nature Life</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-E7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp O5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-O5.html" class="link-btn link-btn-black">LEARN MORE</a>
+                            <a href="contact.html" class="link-btn link-btn-white">CONTACT US</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp V5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">One
+                        Stop Camp Solution</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-V5.html" class="link-btn link-btn-black">LEARN MORE</a>
+                            <a href="contact.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item   has-min-footer" data-type="wap">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #ffffff;">Ucamp V7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #ffffff;">Home
+                        Everywhere</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-V7.html" class="link-btn link-btn-black">LEARN MORE</a>
+                            <a href="contact.html" class="link-btn link-btn-white">CONTACT US</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp P5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">Home
+                        Everywhere</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-P5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp P7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-P7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp Z5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Panoramic view, Back to Nature</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-Z5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp Z7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Reinnovate Your Nature Life</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-Z7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp X5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">100%
+                        Original Design</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-X5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #121212;">Ucamp X7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">One
+                        Stop Camp Solution</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-X7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-black">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp C3</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Designed for Tourism Development</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-C3.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp C5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">Back
+                        to Nature</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-C5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp A5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-A5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp A7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Panoramic view</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-A7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp H5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Designed for Tourism Development</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-H5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp E5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">100%
+                        Original Design</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-E5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp E7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Reinnovate Your Nature Life</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-E7.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="s-contactus.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp O5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">
+                        Nature, Stars and You</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-O5.html" class="link-btn link-btn-black">LEARN MORE</a>
+                            <a href="contact.html" class="link-btn link-btn-white">CONTACT US</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item  " data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #000000;">Ucamp V5</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #000000;">One
+                        Stop Camp Solution</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-V5.html" class="link-btn link-btn-black">Learn More</a>
+                            <a href="contact.html" class="link-btn link-btn-white">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="is-item   has-min-footer" data-type="pc">
+                <div class="is-item-box">
+                    <div class="row is-tit index-title-section showup50" style="color: #ffffff;">Ucamp V7</div>
+                    <div class="row is-description index-description-section showup50delay" style="color: #ffffff;">Home
+                        Everywhere</div>
+                    <div class="is-buttons-group-box showup50delay">
+                        <div class="is-buttons-group">
+                            <a href="prefab-V7.html" class="link-btn link-btn-black">LEARN MORE</a>
+                            <a href="contact.html" class="link-btn link-btn-white">CONTACT US</a>
+                        </div>
+                    </div>
+                    <div class="is-arrow-down jump-am">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="33.5px">
+                            <path
+                                d="M4.293 16.317a1 1 0 0 0 1.414 0L12 10.025l6.293 6.293a1 1 0 1 0 1.414-1.414l-7-7a1 1 0 0 0-1.414 0l-7 7a1 1 0 0 0 0 1.414z"
+                                transform="rotate(180 12 12)" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">var youbube_id = '';</script>
+    <script type="text/javascript">var youku_id = '';</script>
+    <script type="text/javascript">var video_url = '';</script>
+    <script src="static/index/js/jquery.min.js@v=0.011"></script>
+    <script src="static/index/js/jquery.smoove.min.js@v=0.011"></script>
+    <script src="static/index/js/swiper.min.js@v=0.011"></script>
+    <script src="static/index/js/lazyload.min.js@v=0.011"></script>
+    <script src="static/index/js/foundation.min.js@v=0.011"></script>
+    <script src="static/index/js/modernizr.js@v=0.011"></script>
+    <script src="static/index/js/common.js@v=0.011"></script>
+    <script src="static/index/js/tpl.js@v=0.011"></script>
+    <script src="static/index/libs/bootstrap/js/bootstrap.bundle.min.js@v=0.011"></script>
+    <script type="text/javascript">function checkMobile() {
+            let render = true; if ($(window).width() > 828) { render = false; }
+            return render;
+        }
+        var isMobile = checkMobile(); $(function () {
+            $('._delay-loadimage').each(function () {
+                let that = $(this); if (that.prop('nodeName') != 'IMG') { return; }
+                let src = that.data('src'); let wapSrc = that.data('wap-src'); if (isMobile && wapSrc) { src = wapSrc; }
+                that.attr('src', src);
+            }); $('._delay-loadbackgroundimage').each(function () {
+                let that = $(this); let src = that.data('src'); let wapSrc = that.data('wap-src'); if (isMobile && wapSrc) { src = wapSrc; }
+                that.css({ 'background-image': 'url(' + src + ')' });
+            });
+        });</script>
+    <script type="text/javascript">$(function () {
+            $('._nav ._item').hover(function () { $(this).dropdown('show'); }, function () { $(this).dropdown('hide'); }); $('._nav ._item ._menu-item').on('click', function () { var that = $(this); var href = that.attr('href'); window.location = href; }); if ($(window).width() <= 992) {
+                var win = $(window); var coll = $('#navbarNavAltMarkup'); var mask = $('._site-nav ._nav-mask'); var menuList = $('._nav-box'); var siteNav = $('._site-nav'); $('._site-nav ._close').on('click', function () { coll.collapse('toggle'); }); $('._site-nav ._nav-mask').on('click', function () { coll.collapse('toggle'); }); coll.on('show.bs.collapse', function (e) { }); coll.on('shown.bs.collapse', function (e) { siteNav.addClass('mobile-show'); mask.removeClass('hide'); }); coll.on('hide.bs.collapse', function (e) { siteNav.removeClass('mobile-show'); setTimeout(function () { mask.addClass('hide'); }, 500); }); coll.on('hidden.bs.collapse', function (e) { }); var menuHeight = menuList.height(); var winHeight = win.height(); if (winHeight > menuHeight) { menuList.css({ height: winHeight }); }
+
+            }
+        });</script>
+    <script type="text/javascript">$(function () { var lang = "en-us"; $('body').addClass(lang); });</script>
+    <script type="text/javascript">$(function () {
+            if ($('body').hasClass('nav-solid')) {
+                var activeFunc = function (e) {
+                    if ($(window).scrollTop() > 40) { $('body').addClass('nav-solid-active'); } else { $('body').removeClass('nav-solid-active'); }
+                }; activeFunc(); $(window).on('scroll', activeFunc);
+            }
+        })
+    </script>
+    <script
+        type="text/javascript">$(function () { new Swiper('._block-banner', { autoplay: { delay: 10000, disableOnInteraction: false, }, loop: true, pagination: { el: '.swiper-pagination', clickable: true, }, observer: true, observeParents: true, }); });</script>
+    <script type="text/javascript">$(function () {
+            var key = 'history'; var data = []; if (sessionStorage.hasOwnProperty(key)) {
+                try { data = JSON.parse(sessionStorage.getItem(key)); } catch (e) { console.info(e); }
+            }
+            data.push(document.location.href); sessionStorage.setItem(key, JSON.stringify(data)); window.getLastHistoryUrl = function (withoutKey, maxNumber) {
+                let i = data.length - 1; if (!maxNumber) { maxNumber = 5; }
+                var render = []; do {
+                    if (i == -1) { break; }
+                    var url = data[i]; i--; if (typeof (url) != 'string') { continue; }
+                    if (withoutKey && url.indexOf(withoutKey) >= 0) { continue; }
+                    if ($.inArray(url, render) >= 0) { continue; }
+                    render.push(url); if (render.length >= maxNumber) { break; }
+                } while (true); return render;
+            }
+            window.getHistoryList = function () { return data; }
+        });</script>
+    <script type="text/javascript">$(document).ready(function () {
+            $(".headerW").addClass("fullpage")
+            $('#swiper').css({ height: $(window).height() - 1 }); if (!checkMobile()) { $('#swiper').find('[data-type=wap]').remove(); } else { $('#swiper').find('[data-type=pc]').remove(); }
+            var indexSection = $('._index-section'); var swiper = new Swiper('#swiper', {
+                direction: 'vertical', lazy: true, preloadImages: false, speed: 500, mousewheel: true, observer: true, observeParents: true, on: {
+                    init: function () {
+                        $($('.is-item:first', indexSection)).addClass('active'); var isFooterItem = $('.has-min-footer', indexSection); var footEle = $('.footer', this.$el); if (isFooterItem.length) { isFooterItem.css('height', indexSection.height() - footEle.outerHeight()); }
+                    }, slideChangeTransitionStart: function () { $($('.is-item', indexSection).get(this.previousIndex)).removeClass('active'); }, slideChangeTransitionEnd: function () { $($('.is-item', indexSection).get(this.activeIndex)).addClass('active'); }, slideChange: function (s) {
+                        var show = false; if ((this.slides.length - this.activeIndex) <= 2) { show = true; }
+                        try {
+                            if (youbube_id && show) { initYoubute(); } else if (youku_id && show) { initYouku(); } else if (video_url && show) {
+                                initVideo()
+                            }
+                        } catch (e) {
+                            debugger
+                            console.error(e);
+                        }
+                    }
+                }, pagination: { el: '.swiper-pagination', clickable: true, }
+            }); var initYoubute = function () {
+                var box = $("._youtube-home-player"); if (box && box.data("video-id").length > 0 && box.attr('data-video-status') != 'ok') {
+                    var settings = {
+                        playerVars: {
+                            autoplay: 1, autohide: 1, end: 100, loop: 1, modestbranding: 1, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3, pauseOnHover: !1, mute: !0
+                        }
+                    }; youtubeCommon.youtubeFunctions.loadYoutubeAPI(settings); box.attr('data-video-status', 'ok');
+                }
+            }; var initYouku = function () {
+                var box = $("#youkuplayer"); if (youku_id && box.attr('data-video-status') != 'ok') {
+                    var player = new YKU.Player('youkuplayer', {
+                        styleid: '0', client_id: '0b0de284578f67cd', vid: youku_id, newPlayer: true, autoplay: true
+                    }); box.attr('data-video-status', 'ok');
+                }
+            }
+            var initVideo = function () {
+                var box = $("#videoplayer"); if (video_url && box.attr('data-video-status') != 'ok') {
+                    box.each(function (i, player) {
+                        try {
+                            player.play()
+                        } catch (e) {
+                            debugger
+                        }
+                    })
+                    box.attr('data-video-status', 'ok');
+                }
+            }
+        });</script>
+</body>
+
+</html>

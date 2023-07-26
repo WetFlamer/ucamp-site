@@ -1,0 +1,138 @@
+// JavaScript Document
+$(function() {
+	function setMinHeight(){
+		var h = $(window).height()-parseInt($(".wrap").css("paddingTop"))
+		var footer = $(".footer")
+		if(footer.length){
+			h = h - footer.outerHeight()
+		}
+		$("main").css("minHeight",h)
+	}
+	setMinHeight()
+	$(window).resize(setMinHeight)
+
+    $(".mask").click(function(){
+        $(".navM").removeClass("show");
+        $(".mask").removeClass("show");
+        setTimeout(function() {
+            $(".mask").css("display", "none");
+        }, 400);
+    })
+
+    $("[go]").click(function(){
+        var s = $(this).attr("go")
+        $("html,body").animate({
+            scrollTop:$(s).offset().top
+        },300,function(){});
+    })
+
+	
+    if ($(window).width() > 800) {
+        /*手机版 展开收起*/
+        $(".header .menuBtn").click(function() {
+            //$(".mask").css("display", "block");
+            //$(".navM").css("display", "block");
+            $(".navM").addClass("show");
+            $(".mask").css("display", "block");
+            $(".mask").addClass("show");
+
+        });
+
+        $(".navM .close").click(function() {
+            //$(".navM").css("display","none");
+            //$(".mask").css("display", "none");
+            $(".navM").removeClass("show");
+
+            $(".mask").removeClass("show");
+            setTimeout(function() {
+                $(".mask").css("display", "none");
+            }, 400);
+        });
+    } else {
+        /*手机版 展开收起*/
+        $(".header .menuBtn").on("click", function() {
+            $(".navM").addClass("show");
+            $(".mask").css("display", "block");
+            $(".mask").addClass("show");
+        });
+
+        $(".navM .close").on("click", function() {
+            $(".navM").removeClass("show");
+            $(".mask").removeClass("show");
+            setTimeout(function() {
+                $(".mask").css("display", "none");
+            }, 400);
+        });
+    }
+
+    /*手机版 子菜单 展开收起*/
+    $(".navM .n_title").click(function() {
+        if ($(this).parent().hasClass("show")) {
+            $(this).parent().removeClass("show");
+        } else {
+            $(this).parent().addClass("show");
+        }
+
+    });
+
+    // 轮播
+    function swiper_cases() {
+        var obj = $(".swiper-cases");
+        var swiper = new Swiper(obj, {
+            speed: 1000,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    }
+    if ($(".swiper-cases").length) {
+        swiper_cases();
+    };
+
+
+    isScroll.init('.anim');
+    isScroll.init('.animLeft');
+    isScroll.init('.animRight');
+
+});
+
+/*
+ *v:1000
+ *t:Created by 2018/4/15 
+ *e:910547462@qq.com
+ */
+/*滚动添加css*/
+var isScroll = {
+    /*初始化*/
+    init: function(_el) {
+        this.start(_el);
+        $(window).on('scroll', function() {
+            isScroll.start(_el)
+        });
+    },
+    /*开始*/
+    start: function(_el) {
+        var self = this;
+        $(_el).each(function() {
+            var _self = $(this);
+            /*滚动高度*/
+            var isScrollTop = $(window).scrollTop();
+            /*滚动视度*/
+            var isWindowHeiget = $(window).height() * 0.8;
+            /**/
+            var _class = $(this).data('animation');
+            if (isScrollTop + isWindowHeiget > $(this).offset().top) {
+                _self.addClass(_class);
+            }
+        });
+    }
+}
